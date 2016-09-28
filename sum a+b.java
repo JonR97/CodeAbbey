@@ -1,7 +1,7 @@
-package practice;
+package sum.a.b;
 import java.util.Scanner;
 
-public class Practice {
+public class sumAB {
 
     public static void main(String[] args) {
         //codeabbey
