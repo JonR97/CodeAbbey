@@ -1,0 +1,143 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+  	Task myTask = new Task();
+  	myTask.inputDataOne();
+  	myTask.inputDataTwo();
+  	myTask.inputDataThree();
+  	myTask.inputDataFour();
+  	myTask.inputDataFive();
+  	myTask.result();
+  	myTask.custom();
+  }
+}
+
+class Task{
+	
+	int counterOne = 0;
+	int counterTwo = 0;
+	int counterThree = 0;
+	int counterFour = 0;
+	int counterFive = 0;
+	int counterSix = 0;
+	Scanner input = new Scanner(System.in);
+	
+	public void inputDataOne(){
+		String inputOne = "4";
+		for(int i = 0; i<inputOne.length(); i++){
+			if(inputOne.charAt(i) == 'a'){
+				counterOne++;
+			}else if(inputOne.charAt(i) == 'o'){
+				counterOne++;
+			}else if(inputOne.charAt(i) == 'u'){
+				counterOne++;
+			}else if(inputOne.charAt(i) == 'i'){
+				counterOne++;
+			}else if(inputOne.charAt(i) == 'e'){
+				counterOne++;
+			}else if(inputOne.charAt(i) == 'y'){
+				counterOne++;
+			}
+		}
+	}
+	
+	public void inputDataTwo(){
+		String inputTwo = "abracadabra";
+		for(int i = 0; i<inputTwo.length(); i++){
+			if(inputTwo.charAt(i) == 'a'){
+				counterTwo++;
+			}else if(inputTwo.charAt(i) == 'o'){
+				counterTwo++;
+			}else if(inputTwo.charAt(i) == 'u'){
+				counterTwo++;
+			}else if(inputTwo.charAt(i) == 'i'){
+				counterTwo++;
+			}else if(inputTwo.charAt(i) == 'e'){
+				counterTwo++;
+			}else if(inputTwo.charAt(i) == 'y'){
+				counterTwo++;
+			}
+		}
+	}
+	
+	public void inputDataThree(){
+		String inputThree = "pear tree";
+		for(int i = 0; i<inputThree.length(); i++){
+			if(inputThree.charAt(i) == 'a'){
+				counterThree++;
+			}else if(inputThree.charAt(i) == 'o'){
+				counterThree++;
+			}else if(inputThree.charAt(i) == 'u'){
+				counterThree++;
+			}else if(inputThree.charAt(i) == 'i'){
+				counterThree++;
+			}else if(inputThree.charAt(i) == 'e'){
+				counterThree++;
+			}else if(inputThree.charAt(i) == 'y'){
+				counterThree++;
+			}
+		}
+	}
+	
+	public void inputDataFour(){
+		String inputFour = "o a kak ushakov lil vo kashu kakao";
+		for(int i = 0; i<inputFour.length(); i++){
+			if(inputFour.charAt(i) == 'a'){
+				counterFour++;
+			}else if(inputFour.charAt(i) == 'o'){
+				counterFour++;
+			}else if(inputFour.charAt(i) == 'u'){
+				counterFour++;
+			}else if(inputFour.charAt(i) == 'i'){
+				counterFour++;
+			}else if(inputFour.charAt(i) == 'e'){
+				counterFour++;
+			}else if(inputFour.charAt(i) == 'y'){
+				counterFour++;
+			}
+		}
+	}
+	
+	public void inputDataFive(){
+		String inputFive = "my pyx";
+		for(int i = 0; i<inputFive.length(); i++){
+			if(inputFive.charAt(i) == 'a'){
+				counterFive++;
+			}else if(inputFive.charAt(i) == 'o'){
+				counterFive++;
+			}else if(inputFive.charAt(i) == 'u'){
+				counterFive++;
+			}else if(inputFive.charAt(i) == 'i'){
+				counterFive++;
+			}else if(inputFive.charAt(i) == 'e'){
+				counterFive++;
+			}else if(inputFive.charAt(i) == 'y'){
+				counterFive++;
+			}
+		}
+	}
+	
+	public void custom(){
+		System.out.println("Please enter a word.");
+		String inputSix = input.next();
+		for(int i = 0; i<inputSix.length(); i++){
+			if(inputSix.charAt(i) == 'a'){
+				counterSix++;
+			}else if(inputSix.charAt(i) == 'o'){
+				counterSix++;
+			}else if(inputSix.charAt(i) == 'u'){
+				counterSix++;
+			}else if(inputSix.charAt(i) == 'i'){
+				counterSix++;
+			}else if(inputSix.charAt(i) == 'e'){
+				counterSix++;
+			}
+		}
+		System.out.println(inputSix + " has " + counterSix + " vowels.");
+	}
+	
+	public void result(){
+		System.out.println(counterOne + " " + counterTwo + " " + counterThree + " " + counterFour + " " + counterFive);
+	}
+}
