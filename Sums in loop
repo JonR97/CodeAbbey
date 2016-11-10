@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+  	Loop myLoop = new Loop();
+  	myLoop.amount();
+  	myLoop.sum();
+  	myLoop.print();
+  }
+}
+
+class Loop {
+	
+	ArrayList<String> total = new ArrayList<String>();
+	
+	Scanner input = new Scanner(System.in);
+	int sumAmount;
+	int sumOne;
+	int sumTwo;
+	
+	public void amount(){
+		System.out.println("Please enter how many numbers you would like to sum.");
+		sumAmount = input.nextInt();
+	}
+	
+	public void sum(){
+		while(sumAmount>0){
+			sumAmount--;
+			System.out.println("Please enter your first sum.");
+			sumOne = input.nextInt();
+			System.out.println("Please enter your second sum.");
+			sumTwo = input.nextInt();
+			String sumTotal = Integer.toString(sumOne + sumTwo);
+			total.add(sumTotal);
+		}
+	}
+	
+	public void print()
+	{
+		System.out.println(total);
+	}
+}
