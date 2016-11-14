@@ -1,0 +1,19 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+  	Scanner input = new Scanner(System.in);
+  	ArrayList<Integer> temp = new ArrayList<Integer>();
+    System.out.println("Please enter how many values you want to convert.");
+    int convertAmount = input.nextInt();
+    while(convertAmount > 0){
+    	convertAmount--;
+    	System.out.println("Please enter the temperature in Fahrenheit.");
+    	double temperature = input.nextInt();
+    	temperature = (temperature - 32) * 0.5556;
+    	int result = (int) Math.round(temperature);
+    	temp.add(result);
+    }
+    System.out.println(temp);
+  }
+}
