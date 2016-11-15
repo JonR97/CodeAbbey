@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Main {
+	
+	Scanner input = new Scanner(System.in);
+	ArrayList<Integer> numberList = new ArrayList<Integer> ();
+	ArrayList<Integer> median = new ArrayList<Integer> ();
+	  	
+  	public static void main(String[] args) {
+  		Main myMain = new Main();
+  		myMain.medianOfThree();
+  	}
+  
+  	public void medianOfThree(){
+  	Scanner input = new Scanner(System.in);
+    System.out.println("Please enter how many sets of numbers you want.");
+    int amount = input.nextInt();
+    while(amount > 0){
+    	amount--;
+    	for(int i = 3; i>0; i--){
+    		System.out.println("Please enter a number");
+    		int number = input.nextInt();
+    		numberList.add(number);
+    		}
+    	Collections.sort(numberList);
+    	median.add(numberList.get(1));
+    	numberList.clear();
+  	}
+  	System.out.println(median);
+}
+}
