@@ -1,0 +1,46 @@
+import java.util.*;
+
+class Main {
+	
+	Scanner input = new Scanner(System.in);
+	
+  	public static void main(String[] args) {
+    	Main myMain = new Main();
+    	myMain.bodyMassIndex();
+  	}
+  
+  	public void bodyMassIndex(){
+  	System.out.print("Please enter your weight in KG: ");
+  	int weight = input.nextInt();
+  	System.out.print("Please enter your height in meters: ");
+  	float height = input.nextFloat();
+  	float BMI = weight/(height * height);
+  	if(BMI<18.5){
+  		System.out.println("You are underweight.");
+  	}else if(BMI>=18.5 && BMI<25.0){
+  		System.out.println("You are normal weight.");
+  	}else if(BMI>=25.0 && BMI<30.0){
+  		System.out.println("You are overweight.");
+  	}else if(BMI>=30){
+  		System.out.println("You are obese.");
+  	}else{
+  	}
+  	check();
+  	}
+  	
+  	public void check(){
+  		System.out.println("Would you like to check another BMI?");
+  		while(true){
+  			String check = input.next();
+  			check = check.toLowerCase();
+  			if(check.contains("yes")){
+  				bodyMassIndex();
+  				break;
+  			}else if(check.contains("no")){
+  				break;
+  			}else{
+  				System.out.println("Please enter yes or no.");
+  			}
+  		}
+  	}
+}
