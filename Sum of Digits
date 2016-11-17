@@ -1,0 +1,83 @@
+import java.util.*;
+
+class Main {
+	
+	Scanner input = new Scanner(System.in);
+	int numberOne;
+	int numberTwo;
+	int numberThree;
+	ArrayList<Integer> sumList = new ArrayList<Integer>();
+	int sum;
+	
+  public static void main(String[] args) {
+    Main myMain = new Main();
+    myMain.sum();
+  }
+  
+  public void sum(){
+  	numberOne = 0;
+  	numberTwo = 0;
+  	numberThree = 0;
+  	sum = 0;
+  	sumList.clear();
+  	System.out.print("Please enter your first number: ");
+  	while(true){
+		try{
+			numberOne = input.nextInt();
+			break;
+		}catch(InputMismatchException exception){
+			System.out.println("Please enter an Integer.");
+			input.next();
+		}
+  	}
+  	System.out.print("Please enter your second number: ");
+  	while(true){
+  		try{
+  			numberTwo = input.nextInt();
+  			break;
+  		}catch(InputMismatchException exception){
+  			System.out.println("Please enter an Integer.");
+  			input.next();
+  		}
+  	}
+  	System.out.print("Please enter your third number: ");
+  	while(true){
+  		try{
+  			numberThree = input.nextInt();
+  			break;
+  		}catch(InputMismatchException exception){
+  			System.out.println("Please enter an Integer.");
+  			input.next();
+  		}
+  	}
+  	
+  	int total = numberOne * numberTwo + numberThree;
+  	
+    while(total > 0) {
+        sumList.add(total % 10);
+        total /= 10;
+    }
+    for(int i=0; i<sumList.size(); i++){
+    sum += sumList.get(i);
+	}
+	System.out.println("The sum of digits is " + sum);
+	
+	check();
+  }
+  
+  public void check(){
+  	System.out.println("Would you like to find another sum?");
+  	while(true){
+  		String choice = input.next();
+  		choice = choice.toLowerCase();
+  		if(choice.contains("yes")){
+  			sum();
+  			break;
+  		}else if(choice.contains("no")){
+  			break;
+  		}else{
+  			System.out.println("Please enter yes or no.");
+  		}
+  	}
+  }
+}
