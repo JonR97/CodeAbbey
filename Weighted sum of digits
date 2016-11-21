@@ -1,0 +1,57 @@
+class Main {
+  
+  Scanner input = new Scanner(System.in);
+  ArrayList<Integer> weightedSum = new ArrayList<Integer>();
+  int counter;
+  int pos;
+  int multiply;
+  int total;
+  
+  public static void main(String[] args) {
+    Main myMain = new Main();
+    myMain.sum();
+  }
+  
+  public void sum(){
+    reset();
+    System.out.print("Please enter your digit:");
+    int digit = input.nextInt();
+    counter = (int)(Math.log10(digit)+1);
+    while (digit > 0) {
+      weightedSum.add(digit % 10);
+      digit = digit / 10;
+    }
+    Collections.reverse(weightedSum);
+    while(counter>0){
+      total = total + weightedSum.get(pos)*multiply;
+      pos++;
+      multiply++;
+      counter--;
+    }
+    System.out.println("The weighted sum of your digit is: " + total);
+    check();
+  }
+  
+  public void check(){
+    System.out.println("Would you like to check another digit?");
+    while(true){
+      String choice = input.next();
+      choice = choice.toLowerCase();
+      if(choice.contains("yes")){
+        sum();
+      }else if(choice.contains("no")){
+        break;
+      }else{
+        System.out.println("Please enter yes or no.");
+      }
+    }
+  }
+  
+  public void reset(){
+    weightedSum.clear();
+    counter = 0;
+    pos = 0;
+    multiply = 1;
+    total = 0;
+  }
+}
