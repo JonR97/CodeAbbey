@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+  int amount;
+  int sumA;
+  int sumB;
+  int index = 0;
+  cout << "Please enter the amount of sums you would like: ";
+  cin >> amount;
+  int totalArray[amount];
+  while(amount>0){
+    amount--;
+    cout << "Please enter your first number: ";
+    cin >> sumA;
+    cout << "Please enter your second number: ";
+    cin >> sumB;
+    int totalSum = sumA+sumB;
+    totalArray[index] = totalSum;
+    index++;
+  }
+  for(int i=0; i<index; i++){
+    cout << totalArray[i] << " ";
+  }
+}
