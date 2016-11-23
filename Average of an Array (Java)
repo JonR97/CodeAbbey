@@ -1,0 +1,64 @@
+import java.util.*;
+
+class Main {
+  
+  Scanner input = new Scanner(System.in);
+  String validate;
+  int loopAmount;
+  int arrayAmount;
+  int whichArray = 1;
+  int i;
+  int sum;
+  int whichNumber;
+  ArrayList<Integer> total = new ArrayList<Integer>();
+  
+  public static void main(String[] args) {
+    Main myMain = new Main();
+    myMain.amountData();
+    myMain.arrayData();
+  }
+  
+  public void amountData(){
+    System.out.print("Please enter the amount of arrays you would like the average of: ");
+    inputValidation();
+    loopAmount = input.nextInt();
+    loopAmount++;
+  }
+  
+  public void arrayData(){
+    while(whichArray<loopAmount){
+      System.out.print("Please enter the amount of numbers you would like to enter in array " + whichArray + ": ");
+      whichNumber = 1;
+      inputValidation();
+      arrayAmount = input.nextInt();
+      int[] array = new int[arrayAmount];
+      for(i = 0; i<arrayAmount; i++){
+        System.out.print("Please enter number " + whichNumber + ":");
+        inputValidation();
+        array[i] = input.nextInt();
+        if(array[i] == 0){
+          arrayAmount--;
+        }
+        whichNumber++;
+      }
+      for(i=0; i<arrayAmount; i++){
+        sum += array[i];
+      }
+      sum = sum/arrayAmount;
+      total.add(sum);
+      whichArray++;
+      sum = 0;
+    }
+    System.out.println(total);
+  }
+  
+  public void inputValidation(){
+      while(!input.hasNextInt()){
+      validate = input.next();
+      System.out.print("Please enter an integer: ");
+      if(input.hasNextInt()){
+        break;
+      }
+    }
+  }
+}
