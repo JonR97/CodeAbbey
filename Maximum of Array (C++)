@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  
+  int array[300];
+  int input = 1;
+  int i;
+  int max = 0;
+  int min = 300;
+  
+  for(i = 0; i<150; i++){
+    array[i] = input;
+    input += 2;
+  }
+  
+  for(i = 150; i<151; i++){
+    input--;
+    array[i] = input;
+  }
+  
+  for(i = 151; i<300; i++){
+    input -= 2;
+    array[i] = input;
+  }
+  
+  for(i = 0; i<300; i++){
+    cout << array[i] << " ";
+  }
+  
+  for(i=0; i<300; i++){
+    if(array[i]>max)
+    max = array[i];
+  }
+  
+  for(i=0; i<300; i++){
+    if(array[i]<min){
+      min = array[i];
+    }
+  }
+  cout << "\n";
+  cout << "Max: " << max << " Min: " << min;
+}
