@@ -1,0 +1,45 @@
+#include <iostream>
+#include <limits>
+#include <math.h>
+using namespace std;
+int place = 1;
+int i;
+int x;
+float validate;
+int amount;
+float tempF;
+float tempC;
+
+void validation(){
+  while(true){
+    cin >> validate;
+    if(cin.fail()){
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      cout << "Please enter an integer: ";
+    }else{
+      break;
+    }
+  }
+  return;
+}
+
+int main(){
+  cout << "Please enter how many temperatures you want to convert: ";
+  validation();
+  amount = validate;
+  int array[i];
+  for(i=0; i<amount; i++){
+    cout << place << ". Please enter the temperature in Fahrenheit: ";
+    validation();
+    tempF = validate;
+    tempC = ((tempF-32)*5)/9;
+    tempC = round(tempC);
+    array[i] = tempC;
+    place++;
+  }
+  
+  for(i=0; i<amount; i++){
+    cout << array[i] << " ";
+  }
+}
