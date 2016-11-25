@@ -1,0 +1,48 @@
+#include <iostream>
+#include <limits>
+#include <math.h>
+using namespace std;
+int amount;
+double validate;
+double numOne;
+double numTwo;
+double total;
+int i;
+
+void validation(){
+  while(true){
+    cin >> validate;
+    if(cin.fail()){
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      cout << "Please enter an integer: ";
+    }else{
+      break;
+    }
+  }
+  return;
+}
+
+int main(){
+  cout << "Please enter the amount of sums you want to round: ";
+  validation ();
+  amount = validate;
+  amount++;
+  int array[amount];
+  for(i = 1; i<amount; i++){
+    cout << "SUM " << i << endl;
+    cout << "Please enter your first number: ";
+    validation();
+    numOne = validate;
+    cout << "Please enter your second number: ";
+    validation();
+    numTwo = validate;
+    total = numOne/numTwo;
+    total = round(total);
+    cout << total << "\n";
+    array[i] = total;
+  }
+  for(i = 1; i<amount; i++){
+    cout << array[i] << " ";
+  }
+}
