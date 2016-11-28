@@ -6,7 +6,7 @@ class Main{
   int a;
   int b;
   int n;
-  int validate;
+  String validate;
   int counter;
   int amount = 1;
   int i;
