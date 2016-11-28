@@ -1,0 +1,62 @@
+import java.util.*;
+
+class Main{
+  
+  Scanner input = new Scanner(System.in);
+  int a;
+  int b;
+  int n;
+  int validate;
+  int counter;
+  int amount = 1;
+  int i;
+  int staticA;
+  ArrayList<Integer> total = new ArrayList<Integer>();
+  
+  public static void main(String[] args){
+    Main myMain = new Main();
+    myMain.start();
+  }
+  
+  public void start(){
+    System.out.print("Please enter the amount of time you would like to run this code: ");
+    validation();
+    counter = input.nextInt();
+    sequence();
+  }
+  
+  public void sequence(){
+    for(i = 0; i<counter; i++){
+      System.out.println("Sequence " + amount);
+      System.out.print("Please enter your start number: ");
+      validation();
+      a = input.nextInt();
+      System.out.print("Please enter your step size: ");
+      validation();
+      b = input.nextInt();
+      System.out.print("Please enter the amount of times you want to increase the number: ");
+      validation();
+      n = input.nextInt();
+      staticA = a;
+      while(n>1){
+        staticA = staticA + b;
+        a = a + (staticA);
+        n--;
+      }
+      total.add(a);
+      amount++;
+    }
+    System.out.println(total);
+  }
+  
+  
+  public void validation(){
+    while(!input.hasNextInt()){
+      validate = input.nextInt();
+      System.out.print("Please enter an integer: ");
+      if(input.hasNextInt()){
+        break;
+      }
+    }
+  }
+}
