@@ -1,0 +1,50 @@
+#include <iostream>
+#include <limits>
+#include <algorithm>
+using namespace std;
+
+int validate; //The validation var
+int runAmount; //The amount of times the program will run
+int x; //The first for loop var
+int i; //The second for loop var
+int loopArray[3]; //Used to store the 3 values
+int whichNumber; //A display counter
+int whichSet = 1; //Displays what set of three the user is on
+
+void validation(){
+  while(true){
+    cin >> validate;
+    if(cin.fail()){
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n'); //Main integer validation line
+      cout << "Please enter an integer: ";
+    }else{
+      break;
+    }
+  }
+}
+
+int main(){
+  cout << "Please enter the amount of times you want to run the program: ";
+  validation(); //Runs the validation method
+  runAmount = validate; //Sets the successful input into runAmount
+  int arrayTotal[runAmount]; //Gives arrayTotal an index amount equal to runAmount
+  
+  for(x = 0; x<runAmount; x++){
+    whichNumber = 1; //This is a display counter
+    cout << "Set " << whichSet << endl; //Prints which set the user is on
+    whichSet++;
+    for(i = 0; i<3; i++){ //Since it is median of 3, we do it whilst i is less than 3
+      cout << "Please enter number " << whichNumber << ":" ;
+      validation();
+      loopArray[i] = validate; //Sets the successful input into an array at i's current value
+      whichNumber++;
+    }
+    sort(loopArray, loopArray+3); //Sorts the first 3 index's of loopArray
+    arrayTotal[x] = loopArray[1]; //Stores the second index of loopArray in arrayTotal
+  }
+  
+  for(i=0; i<runAmount; i++){
+    cout << arrayTotal[i] << " ";
+  }
+}
